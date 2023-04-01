@@ -73,3 +73,11 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# gem 'Devise'
+gem 'devise'
+
+# Setup
+gem 'tty-spinner'
+gem 'htmlbeautifier'
+gem 'faker'
