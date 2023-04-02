@@ -46,6 +46,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@popperjs/core@^2.9.3":
+  "integrity" "sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw=="
+  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.7.tgz"
+  "version" "2.11.7"
+
 "@rails/actioncable@^7.0":
   "integrity" "sha512-tz4oM+Zn9CYsvtyicsa/AwzKZKL+ITHWkhiu7x+xF77clh2b4Rm+s6xnOgY/sGDWoFWZmtKsE95hxBPkgQQNnQ=="
   "resolved" "https://registry.npmjs.org/@rails/actioncable/-/actioncable-7.0.4.tgz"
@@ -287,6 +292,14 @@
   dependencies:
     "to-regex-range" "^5.0.1"
 
+"flowbite@^1.6.4":
+  "integrity" "sha512-//kSaigwERCcE3udumadB3+xfOXeN/ZQzcub2qVCHuB7uscB4XIm3yP9R8zL0XsEOnYG2lnroq/dydQZbzvESw=="
+  "resolved" "https://registry.npmjs.org/flowbite/-/flowbite-1.6.4.tgz"
+  "version" "1.6.4"
+  dependencies:
+    "@popperjs/core" "^2.9.3"
+    "mini-svg-data-uri" "^1.4.3"
+
 "fraction.js@^4.2.0":
   "integrity" "sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA=="
   "resolved" "https://registry.npmjs.org/fraction.js/-/fraction.js-4.2.0.tgz"
@@ -412,7 +425,7 @@
     "braces" "^3.0.2"
     "picomatch" "^2.3.1"
 
-"mini-svg-data-uri@^1.2.3":
+"mini-svg-data-uri@^1.2.3", "mini-svg-data-uri@^1.4.3":
   "integrity" "sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg=="
   "resolved" "https://registry.npmjs.org/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz"
   "version" "1.4.4"
