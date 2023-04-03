@@ -1,0 +1,20 @@
+<%# User signed_in? %>
+<% if user_signed_in? %>
+  <button data-dropdown-toggle="dropdownDivider" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0" type="button"><%= current_user.full_name %></button>
+  <div id="dropdownDivider" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+    <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownDividerButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Dashboard</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+      </li>
+    </ul>
+    <div class="py-2">
+      <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100") %>
+    </div>
+  </div>
+<% else %>
+  <%= link_to("Create Account", new_user_registration_path, class:"text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2") %>
+  <%= link_to("Sign in", new_user_session_path, class:"text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0") %>
+<% end %>
