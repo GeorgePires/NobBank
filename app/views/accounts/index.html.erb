@@ -1,2 +1,29 @@
-<h1>Accounts#index</h1>
-<p>Find me in app/views/accounts/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Saldo</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= account.account_number %></td>
+        <td><%= account.status %></td>
+        <td><%= account.balance %></td>
+        <td>
+          <%= link_to "Editar", edit_account_path(account) %>
+          <% unless account == current_user %>
+            <%= link_to "Encerrar", account_path(account), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Nova Conta", new_account_path %>
