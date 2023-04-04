@@ -1,11 +1,11 @@
 class AccountsController < ApplicationController
-  layout 'welcome'
   before_action :authenticate_user!
   before_action :set_user, only: [:new, :create]
   
 
   def index
     @accounts = current_user.accounts
+    @total_accounts_balance = current_user.accounts.sum(:balance)
   end
   
 

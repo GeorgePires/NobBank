@@ -1,29 +1,9 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Saldo</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @accounts.each do |account| %>
-      <tr>
-        <td><%= account.id %></td>
-        <td><%= account.account_number %></td>
-        <td><%= account.status %></td>
-        <td><%= account.balance %></td>
-        <td>
-          <%= link_to "Editar", edit_account_path(account) %>
-          <% unless account == current_user %>
-            <%= link_to "Encerrar", account_path(account), method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+  Dashboard
+</h2>
 
-<%= link_to "Nova Conta", new_account_path %>
+<%# Dashboard/nav %>
+<%= render 'shared/dashboard_nav', total_accounts_balance: @total_accounts_balance  %>
+
+<%# Dashboard/Table %>
+<%= render  "shared/dashboard_table" %>
