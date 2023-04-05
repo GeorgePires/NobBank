@@ -9,13 +9,14 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body class="h-full">
-    <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
-      <div class="container flex items-center justify-between h-full px-6 mx-auto">
-        <%= render  "layouts/header" %>
-      </div>
+    <header class="fixed w-full">
+      <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
+        <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+          <%= render  "layouts/header" %>
+        </div>
+      </nav>
     </header>
-    <div class="container px-6 mx-auto grid">
-      <%= yield %>
-    </div>
-</body>
+    <%= yield %>
+    <%= render  "layouts/welcome/footer" %>
+  </body>
 </html>
