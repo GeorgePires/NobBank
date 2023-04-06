@@ -1,0 +1,7 @@
+<%= link_to "Show", account_path(account), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium bg-purple-100" %>
+<%= link_to "Credit", account_credit_path(account), method: :get,
+                                                    class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+<%= link_to "debit", account_debit_path(account), method: :get,
+                                                  class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+<%= link_to "transfer", account_transfer_path(account), method: :get,
+                                                        class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

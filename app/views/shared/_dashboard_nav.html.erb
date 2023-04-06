@@ -7,14 +7,12 @@
     <span>Welcome! to your account</span>
   </div>
 </a>
-
-<%# Flash messages [success, error] %>
-<%= render  "shared/flash_msg" %>
-
+<% # Flash messages [success, error] %>
+<%= render "shared/flash_msg" %>
 <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-  <%# Card: Total clients %>
+  <% # Card: Total clients %>
   <div
-    class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    class="flex items-center p-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
     <div
       class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -29,9 +27,9 @@
       <p class="text-lg font-semibold text-gray-700 dark:text-gray-200"><%= @accounts&.count %></p>
     </div>
   </div>
-  <%# Card: Total wallets balance %>
+  <% # Card: Total wallets balance %>
   <div
-    class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    class="flex items-center p-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
     <div
       class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -50,9 +48,9 @@
       </p>
     </div>
   </div>
-  <%# Card: Action Credits %>
+  <% # Card: Action Credits %>
   <div
-    class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    class="flex items-center p-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
     <div
       class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 21 21"><path fill="currentColor" d="M15 15V17H18V20H20V17H23V15H20V12H18V15M14.97 11.61C14.85 10.28 13.59 8.97 12 9C10.3 9.03 9 10.3 9 12C9 13.7 10.3 14.94 12 15C12.38 15 12.77 14.92 13.14 14.77C13.41 13.67 13.86 12.63 14.97 11.61M13 16H7C7 14.9 6.11 14 5 14V10C6.11 10 7 9.11 7 8H17C17 9.11 17.9 10 19 10V10.06C19.67 10.06 20.34 10.18 21 10.4V6H3V18H13.32C13.1 17.33 13 16.66 13 16Z"></path></svg>
@@ -61,12 +59,12 @@
       <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
         Credits
       </p>
-      <p class="text-lg font-semibold text-gray-700 dark:text-gray-200"><%#= @transactions&.credit %></p>
+      <p class="text-lg font-semibold text-gray-700 dark:text-gray-200"><%= @transactions&.credit %></p>
     </div>
   </div>
-  <%# Card: Action Debits %>
+  <% # Card: Action Debits %>
   <div
-    class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+    class="flex items-center p-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
     <div class="p-3 mr-4 text-red-500 bg-red-100 rounded-full dark:text-red-100 dark:bg-red-600">
       <svg class="w-5 h-5" viewBox="0 0 20 20"><path fill="currentColor" d="M15 15V17H23V15M14.97 11.61C14.85 10.28 13.59 8.97 12 9C10.3 9.03 9 10.3 9 12C9 13.7 10.3 14.94 12 15C12.38 15 12.77 14.92 13.14 14.77C13.41 13.67 13.86 12.63 14.97 11.61M13 16H7C7 14.9 6.11 14 5 14V10C6.11 10 7 9.11 7 8H17C17 9.11 17.9 10 19 10V10.06C19.67 10.06 20.34 10.18 21 10.4V6H3V18H13.32C13.1 17.33 13 16.66 13 16Z"></path></svg>
     </div>
@@ -74,10 +72,7 @@
       <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
         Debits
       </p>
-      <p class="text-lg font-semibold text-gray-700 dark:text-gray-200"><%#= @transactions&.debit %></p>
+      <p class="text-lg font-semibold text-gray-700 dark:text-gray-200"><%= @transactions&.debit %></p>
     </div>
   </div>
 </div>
-
-
-
