@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  get 'transactions/index'
-  get 'transactions/show'
-
-  get 'welcome/index'
-  
   devise_for :users
-  root 'welcome#index'
-  resources :accounts
+  
+  resources :accounts do
+    get '/credit', action: 'credit'
+    post '/create_credit', action: 'create_credit'
+      
+    get '/debit', action: 'debit'
+    post '/create_debit', action: 'create_debit'
+
+    get '/transfer', action: 'transfer'
+    post '/create_transfer', action: 'create_transfer'
+
+    get '/transactions', action: 'transactions'
+  end
+  
+  resources :transactions, only: [:edit, :update, :show]
+
+  root "welcome#index"
 end
