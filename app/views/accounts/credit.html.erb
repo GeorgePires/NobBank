@@ -1,0 +1,9 @@
+<h2 class="my-6 text-2xl font-semibold text-gray-700"></h2>
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl"><%= current_user.full_name %></h1>
+  <p><strong>Current Balance:</strong> <%= number_to_currency(@account.try(:balance), unit: "$ ", separator: ".", delimiter: ",") %></p>
+
+  <%= render 'forms/form_credit', accounts: @account %>
+
+  <%= link_to 'Back to users', accounts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+</div>
