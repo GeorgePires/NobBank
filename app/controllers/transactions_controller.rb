@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
-  def index
-  end
+  before_action :authenticate_user!
 
-  def show
-  end
+  def index; end
+
+  def show; end
 end
