@@ -1,0 +1,28 @@
+<div id="<%= dom_id account %>">
+  <p class="my-5">
+    <strong class="inline text-slate-700">Account active:</strong>
+    <span class="<%= color_status(account.try(:status)) %>">
+      <%= account.try(:status) %>
+    </span>
+  </p>
+  <p class="my-5">
+    <strong class="inline text-slate-700">Account Number:</strong>
+    <strong>#<%= account.try(:account_number) %></strong>
+  </p>
+  <p class="my-5">
+    <strong class="inline text-slate-700">Account Holder:</strong>
+    <%= current_user.full_name %>
+  </p>
+  <p class="my-5">
+    <strong class="inline text-slate-700">Email:</strong>
+    <%= current_user.email %>
+  </p>
+  <p class="my-5">
+    <strong class="inline text-slate-700">Balance available:</strong>
+    <%= number_to_currency(account.try(:balance), unit: "R$ ", separator: ".", delimiter: ",") %>
+  </p>
+  <p class="my-5">
+    <strong class="inline text-slate-700">Created:</strong>
+    <%= account.created_at.strftime("%a, %d %B %Y at %T") %>
+  </p>
+</div>
