@@ -1,12 +1,11 @@
 <div class="w-full">
   <h2 class="my-6 text-2xl font-semibold text-gray-700"></h2>
-  <%# Dashboard/nav %>
   <h4 class="mb-4 text-lg font-semibold text-gray-600" >
-   Your account
+    Your account
   </h4>
   <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
-    <p class="text-sm text-gray-600">
-      Large, full width sections goes here
+    <p class="text-sm text-gray-900">
+      Hi <%= current_user.full_name %>! Here you will find your account information
     </p>
   </div>
   <div class="mx-auto">
@@ -16,11 +15,11 @@
         <p class="text-gray-600"><%= render 'account', account: @account %></p>
         <%= render  "shared/links", account: @account %>
         <div class="inline-block ml-2">
-          <%= button_to 'Switch off', account_path(@account), method: :delete,
-          class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+          <%= button_to active_button_text(@account.status), account_path(@account), method: :delete,
+            class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
         </div>
         <%= link_to 'Back', accounts_path, class: "ml-2 rounded-lg py-3
-        px-5 bg-gray-100 inline-block font-medium" %>
+        px-5 bg-purple-600 text-white inline-block font-medium" %>
       </div>
       <div class="min-w-0 p-4 bg-white rounded-lg shadow-md">
         <h4 class="mb-4 font-semibold">Transactions history</h4>
@@ -38,11 +37,16 @@
                 <tr>
                   <td>
                     <span class="<%= color_transaction(t.transaction_type) %>">
-                      <%= t.transaction_type %>
+                      <% if t.transaction_type == 'transfer' %>
+                        <%= t.transaction_type %> to: <%= t.destiny_account %>
+                      <% else %>
+                        <%= t.transaction_type %>
+                      <% end %>
+                      
                     </span>
                   </td>
                   <td><%= number_to_currency(t.amount) %></td>
-                  <td><%= t.created_at.strftime("%a, %d %B %Y at %T") %></td>
+                  <td><%= t.created_at.strftime("%d %B %Y at %T") %></td>
                 </tr>
               <% end %>
             </tbody>
@@ -50,7 +54,6 @@
         <% else %>
           <p class="text-center text-red-500 mb-4">No transactions found</p>
         <% end %>
-
       </div>
     </div>
   </div>
