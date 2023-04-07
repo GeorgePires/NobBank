@@ -1,20 +1,17 @@
-<!-- Start block -->
 <section class="bg-white">
   <div
     class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
     <div class="mr-auto place-self-center lg:col-span-7">
-      <%# Flash messages [success, error] %>
+      <% # Flash messages [success, error] %>
       <%= render "shared/flash_msg" %>
       <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl">
-        Building digital <br />products & brands.
+        Digital platform <br />financial solutions.
       </h1>
       <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl ">
-        This free and open-source landing page template was built using the
-        utility classes from Tailwind CSS and based on the components from the
-        Flowbite Library and the Blocks System
+        Nobbank is a digital financial platform that offers a variety of convenient financial solutions for individuals and businesses. With an intuitive and easy-to-use interface, Nobbank provides digital banking services to help you manage your finances with ease.
       </p>
       <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-        <%= link_to('https://github.com/GeorgePires/NobBank', class:"inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100") do %>
+        <%= link_to("https://github.com/GeorgePires/NobBank", class: "inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100") do %>
          <svg
             class="w-4 h-4 mr-2 text-gray-500 "
             xmlns="http://www.w3.org/2000/svg"
@@ -24,58 +21,10 @@
           </svg>
           View on GitHub
         <% end %>
-          <%= link_to('#', class:"inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100") do %>
-         <svg
-            class="w-4 h-4 mr-2"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 200 300"
-            width="1667"
-            height="2500">
-            <style type="text/css">
-              .st0 {
-                fill: #0acf83;
-              }
-              .st1 {
-                fill: #a259ff;
-              }
-              .st2 {
-                fill: #f24e1e;
-              }
-              .st3 {
-                fill: #ff7262;
-              }
-              .st4 {
-                fill: #1abcfe;
-              }
-            </style>
-            <path
-              id="path0_fill"
-              class="st0"
-              d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z" />
-            <path
-              id="path1_fill"
-              class="st1"
-              d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50z" />
-            <path
-              id="path1_fill_1_"
-              class="st2"
-              d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50z" />
-            <path
-              id="path2_fill"
-              class="st3"
-              d="M100 0h50c27.6 0 50 22.4 50 50s-22.4 50-50 50h-50V0z" />
-            <path
-              id="path3_fill"
-              class="st4"
-              d="M200 150c0 27.6-22.4 50-50 50s-50-22.4-50-50 22.4-50 50-50 50 22.4 50 50z" />
-          </svg>
-          Get Figma file
-        <% end %>
       </div>
     </div>
     <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-      <img src="<%= asset_path('hero.png') %>" alt="hero image" />
+      <img src="<%= asset_path("hero.png") %>" alt="hero image" />
     </div>
   </div>
 </section>
@@ -91,13 +40,12 @@
         Trusted by over 600 million users and 10,000 teams
       </h2>
       <p class="font-light text-gray-500 sm:text-xl ">
-        Our rigorous security and compliance standards are at the heart of all
-        we do. We work tirelessly to protect you and your customers.
+        Trusted by thousands of users and businesses worldwide, Nobbank is the digital banking platform that puts security and convenience at the forefront of everything we do.We work tirelessly to protect you and your money.
       </p>
       <div
         class="pt-6 mt-6 space-y-4 border-t border-gray-200 ">
         <div>
-          <%= link_to('#', class:"inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800") do %>
+          <%= link_to("#", class: "inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800") do %>
           Explore Legality Guide
             <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" mlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"clip-rule="evenodd"></path>
@@ -105,7 +53,7 @@
           <% end %>
         </div>
         <div>
-          <%= link_to('#', class:"inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800") do %>
+          <%= link_to("#", class: "inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800") do %>
           Visit the Trust Center
             <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" mlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"clip-rule="evenodd"></path>
@@ -129,7 +77,7 @@
         </svg>
         <h3 class="mb-2 text-2xl font-bold">99.99% uptime</h3>
         <p class="font-light text-gray-500 ">
-          For Landwind, with zero maintenance downtime
+          For NobBank, with zero maintenance downtime
         </p>
       </div>
       <div>
@@ -159,7 +107,7 @@
         </svg>
         <h3 class="mb-2 text-2xl font-bold">100+ countries</h3>
         <p class="font-light text-gray-500 ">
-          Have used Landwind to create functional websites
+          Our platform has been used by thousands of businesses worldwide
         </p>
       </div>
       <div>
