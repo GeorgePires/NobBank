@@ -4,6 +4,6 @@ class Transaction < ApplicationRecord
   validates :amount, presence: true
 
   scope :history_transactions, -> { order(created_at: :desc).limit(8) }
-  scope :credit, -> { where(transaction_type: "credit").count }
-  scope :debit, -> { where(transaction_type: "debit").count }
+  scope :deposit, -> { where(transaction_type: "deposit").count }
+  scope :withdraw, -> { where(transaction_type: "withdraw").count }
 end

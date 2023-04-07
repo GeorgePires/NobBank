@@ -2,16 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :accounts do
-    get '/credit', action: 'credit'
-    post '/create_credit', action: 'create_credit'
+    get '/deposit', action: 'deposit'
+    post '/create_deposit', action: 'create_deposit'
       
-    get '/debit', action: 'debit'
-    post '/create_debit', action: 'create_debit'
+    get '/withdraw', action: 'withdraw'
+    post '/create_withdraw', action: 'create_withdraw'
 
     get '/transfer', action: 'transfer'
     post '/create_transfer', action: 'create_transfer'
-
-    get '/transactions', action: 'transactions'
   end
   
   resources :transactions, only: [:edit, :update, :show]

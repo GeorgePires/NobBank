@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_account_and_user, only: %i[ credit create_credit debit create_debit transactions transfer create_transfer]
+  before_action :set_account, only: %i[show destroy]
+  before_action :set_account_and_user, only: %i[ deposit create_deposit withdraw create_withdraw transfer create_transfer ]
 
   def index
     @accounts = current_user.accounts
@@ -22,39 +23,42 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.find(params[:id])
     @transactions = Transaction.where(account_id: @account.id).history_transactions
   end
 
   def destroy
-    @account = Account.find(params[:id])
-    @account.update(status: false)
-    redirect_to accounts_path
-  end
-
-  def credit; end
-  def debit; end
-  def transfer; end
-
-  def create_credit
-    amount = params[:amount].to_f
-    begin
-      if @account.credit(amount)
-        redirect_to accounts_path, notice: "Credit of $ #{amount} was successful."
-      end
-    rescue StandardError => e
-      redirect_to accounts_path, alert: "Credit of $ #{amount} was unsuccessful: #{e.message}"
+    if @account.status == false
+      @account.update(status: true)
+      redirect_to accounts_path, notice: "Account was successfully active"
+    else
+      @account.update(status: false)
+      redirect_to accounts_path, alert: "Account was successfully suspended"
     end
   end
 
-  def create_debit
-    amount = params[:amount].to_d
+  def deposit; end
+  def withdraw; end
+  def transfer; end
+
+  def create_deposit
+    amount = params[:amount].to_f
     begin
-      if @account.debit(amount)
-        redirect_to accounts_path, notice: "Debit of $ #{amount} was successful."
+      if @account.deposit(amount)
+        redirect_to accounts_path, notice: "Deposit of $ #{amount} was successful."
       end
     rescue StandardError => e
-      redirect_to accounts_path, alert: "Debit of $ #{amount} was unsuccessful: #{e.message}"
+      redirect_to accounts_path, alert: "Deposit of $ #{amount} was unsuccessful: #{e.message}"
+    end
+  end
+
+  def create_withdraw
+    amount = params[:amount].to_d
+    begin
+      if @account.withdraw(amount)
+        redirect_to accounts_path, notice: "Withdraw of $ #{amount} was successful."
+      end
+    rescue StandardError => e
+      redirect_to accounts_path, alert: "Withdraw of $ #{amount} was unsuccessful: #{e.message}"
     end
   end
 
@@ -74,11 +78,11 @@ class AccountsController < ApplicationController
     end
   end
 
-  def transactions
-    @transactions = @account.transactions.order(created_at: :desc)
-  end
-
   private
+
+  def set_account
+    @account = Account.find(params[:id])
+  end
 
   def set_account_and_user
     @user = current_user
