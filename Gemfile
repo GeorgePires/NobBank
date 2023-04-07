@@ -81,3 +81,4 @@ gem 'devise'
 gem 'tty-spinner'
 gem 'htmlbeautifier'
 gem 'faker'
+gem "dockerfile-rails", ">= 1.2", :group => :development
