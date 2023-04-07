@@ -7,12 +7,12 @@ class Account < ApplicationRecord
 
   #before_validation :check_status
 
-  def credit(amount)
+  def deposit(amount)
     if amount > 0
       ActiveRecord::Base.transaction do
         self.balance += amount
         save!
-        transaction = transactions.create!(transaction_type: "credit", amount: amount)
+        transaction = transactions.create!(transaction_type: "deposit", amount: amount)
         transaction
       end
     else
@@ -20,13 +20,13 @@ class Account < ApplicationRecord
     end
   end
 
-  def debit(amount)
+  def withdraw(amount)
     if amount.positive?
       if self.balance >= amount
         ActiveRecord::Base.transaction do
           self.balance -= amount
           save!
-          transaction = transactions.create!(transaction_type: "debit", amount: amount)
+          transaction = transactions.create!(transaction_type: "withdraw", amount: amount)
           transaction
         end
       else
@@ -41,10 +41,14 @@ class Account < ApplicationRecord
     if self.balance >= amount && self.id != account.id
       ActiveRecord::Base.transaction do
         total_amount = calc_transfer_fee(amount)
-        update(balance: self.balance -= total_amount)
-        account.update(balance: account.balance += total_amount)
-        transaction = transactions.create!(destiny_account: account.account_number, transaction_type: "transfer", amount: total_amount)
-        transaction
+        if self.balance >= total_amount
+          update(balance: self.balance -= total_amount) 
+          account.update(balance: account.balance += amount)
+          transaction = transactions.create!(destiny_account: account.account_number, transaction_type: "transfer", amount: amount)
+          transaction
+        else
+          raise "Insufficient funds"
+        end
       end
     else
       raise "Insufficient funds"
