@@ -1,4 +1,4 @@
-<%= form_with(model: account) do |form| %>
+<%= form_with(model: account, class: "contents") do |form| %>
   <% if account.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
@@ -10,15 +10,18 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="my-5">
     <%= form.label :balance %>
-    <%= form.text_field :balance, class: 'form-control' %>
+    <%= form.text_field :balance, class: 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :status %>
-    <%= form.check_box :status, class: 'form-control' %>
+  <div class="my-5 ">
+    <%= form.label :active? %>
+    <%= form.check_box :status, class: 'text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray' %>
   </div>
-
-  <%= form.submit "Criar Conta", class: "btn btn-primary" %>
+  <div class="inline">
+    <%= form.submit "Create account", class: "rounded-lg py-3 px-5 bg-purple-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
 <% end %>
+
+
