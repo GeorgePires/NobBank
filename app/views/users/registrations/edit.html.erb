@@ -1,7 +1,22 @@
+<%# unless action_name != "edit" && action_name != "update" %>
+  <%#= render  "layouts/header" %>
+<%# end %>
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
+
+  <div class="grid gap-6 mb-6 md:grid-cols-2">
+    <div>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first name",  class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+    <div>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, autofocus: true, autocomplete: "email",  class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />

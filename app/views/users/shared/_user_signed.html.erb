@@ -6,6 +6,9 @@
       <li>
         <%= link_to("Dashboard", accounts_path, class:"block px-4 py-2 hover:bg-gray-100") %>
       </li>
+      <li>
+        <%= link_to('Edit Account', edit_user_registration_path, data: {action: "dropdown#toggle"}, method: :delete, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100") %>
+      </li>
     </ul>
     <div class="py-2">
       <%= button_to("Logout", destroy_user_session_path, method: :delete, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100") %>

@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_many :accounts, dependent: :destroy
+
   after_create :create_account
 
   # Include default devise modules. Others available are:
