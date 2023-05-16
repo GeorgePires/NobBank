@@ -9,14 +9,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body class="h-full">
-    <header class="fixed w-full">
-      <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
-        <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-          <%= render  "layouts/header" %>
-        </div>
-      </nav>
-    </header>
+    <%= render  "layouts/components/header" %>
     <%= yield %>
-    <%= render  "layouts/welcome/footer" %>
+    <%= render  "layouts/components/footer" %>
   </body>
 </html>
