@@ -1,4 +1,4 @@
-# TESTE TÉCNICO - Nobe Sistemas
+# NobBank
 <br>
 <div align="center">
     <img alt="app-virtual-wallet" src=".github/capa-nob.png" width="95%">
@@ -21,6 +21,7 @@
 - Gem: Devise
 - Gem: Rspec
 - Deploy ~> Fly.io
+
 
 ## 💥 Funcionalidades
 
