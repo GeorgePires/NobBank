@@ -83,6 +83,8 @@ end
 # gem 'Devise'
 gem 'devise'
 
+gem 'pagy', '~> 6.0', '>= 6.0.4'
+
 # Setup
 gem 'dockerfile-rails', '>= 1.2', group: :development
 gem 'faker'
@@ -91,7 +93,9 @@ gem 'tty-spinner'
 
 # gem 'Rack-cors'
 gem 'rack-cors', '~> 2.0'
+
 # gem 'Serializer'
 gem 'active_model_serializers'
+
 # gem 'Swagger/rspec
 gem 'rswag'
