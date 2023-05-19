@@ -1,11 +1,5 @@
 <div id="<%= dom_id account %>">
   <p class="my-5">
-    <strong class="inline text-slate-700">Account active:</strong>
-    <span class="<%= color_status(account.try(:status)) %>">
-      <%= account.try(:status) %>
-    </span>
-  </p>
-  <p class="my-5">
     <strong class="inline text-slate-700">Account Number:</strong>
     <strong>#<%= account.try(:account_number) %></strong>
   </p>
@@ -25,4 +19,23 @@
     <strong class="inline text-slate-700">Created:</strong>
     <%= account.created_at.strftime("%a, %d %B %Y at %T") %>
   </p>
+</div>
+<div>
+  <div class="inline-block ml-2">
+    <%= button_to active_button_text(account.try(:status)), account_path(account),
+      method: :delete,
+      data: { turbo_confirm: 'Are you sure?' },
+      class: "ml-2 rounded-lg py-3 px-5 bg-purple-600 text-white inline-block font-medium"
+    %>
+  </div>
+  <%= link_to "Deposit", account_deposit_path(account),
+    method: :get,
+    class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Withdraw", account_withdraw_path(account),
+    method: :get,
+    class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= link_to "Transfer", account_transfer_path(account),
+    method: :get,
+    class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+  <hr class="mt-6">
 </div>

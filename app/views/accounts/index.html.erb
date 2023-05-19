@@ -1,7 +1,20 @@
-<h2 class="my-6 text-2xl font-semibold text-gray-700">
-  Dashboard
-</h2>
-<%# Dashboard/nav %>
-<%= render 'shared/dashboard_nav', total_accounts_balance: @total_accounts_balance %>
-<%# Dashboard/Table %>
-<%= render  "shared/dashboard_table" %>
+<%#= render Cards - Dashboard %>
+<%= render partial: 'layouts/components/cards', locals: { account: @account, transactions: @transactions } %>
+<div class="w-full">
+  <div class="mx-auto">
+    <div id="users" class="grid gap-6 mb-8 md:grid-cols-2">
+      <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs shadow-md">
+        <p class="text-gray-600"><%= render 'account', account: @account %></p>
+      </div>
+      <div class="min-w-0 p-4 bg-white rounded-lg shadow-md">
+        <h4 class="mb-4 font-semibold">Transactions history</h4>
+        <div class="w-full mb-4 overflow-hidden rounded-lg shadow-xs">
+          <div class="w-full overflow-x-auto">
+            <%= render  "transactions/history" %>
+          </div>
+        </div>
+        <%= link_to('View more', transactions_path,  class: "font-semibold text-gray-700 hover:bg-purple-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0") %>
+      </div>
+    </div>
+  </div>
+</div>

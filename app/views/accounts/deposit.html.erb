@@ -5,6 +5,7 @@
     <p><strong>Account Number:</strong> <%= @account.try(:account_number) %></p>
     <p><strong>Current Balance:</strong> <%= number_to_currency(@account.try(:balance), unit: "$ ", separator: ".", delimiter: ",") %></p>
   </div>
-  <%= render 'accounts/forms/form_credit', accounts: @account %>
-  <%= link_to 'Back to accounts', accounts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+  <%= render 'accounts/forms/form_deposit', account: @account %>
+  <%= link_to 'Back to account', accounts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>
