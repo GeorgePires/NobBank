@@ -1,2 +1,24 @@
-<h1>Transactions#index</h1>
-<p>Find me in app/views/transactions/index.html.erb</p>
+<div class="w-full">
+  <h2 class="my-6 text-2xl font-semibold text-gray-700"></h2>
+  <h4 class="mb-4 text-lg font-semibold text-gray-600" >
+    Your Transactions
+  </h4>
+  <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md">
+    <p class="text-sm text-gray-900">
+      Hi <%= current_user.full_name %>! Here you will find your transactions 
+    </p>
+  </div>
+  <div class="mx-auto">
+    <%# Cards Profile / History %>
+    <div id="users" class="">
+      <div class="min-w-0 p-4 bg-white rounded-lg shadow-md">
+        <h4 class="mb-4 font-semibold">Transactions history</h4>
+        <%= render  "history" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='flex my-5 justify-center'>
+  <%== pagy_nav(@pagy) %>
+</div>

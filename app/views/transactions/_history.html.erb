@@ -1,0 +1,30 @@
+<% if @transactions.present? %>
+  <table class="table table-zebra w-full">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @transactions.each do |t| %>
+        <tr>
+          <td>
+            <span class="<%= color_transaction(t.transaction_type) %>">
+              <% if t.transaction_type == 'transferred' %>
+                <%= t.transaction_type %> to: <%= t.destiny_account %>
+              <% else %>
+                <%= t.transaction_type %>
+              <% end %>
+            </span>
+          </td>
+          <td><%= number_to_currency(t.amount) %></td>
+          <td><%= t.created_at.strftime("%d %B %Y at %T") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="text-center text-red-500 mb-4">No transactions found</p>
+<% end %>
