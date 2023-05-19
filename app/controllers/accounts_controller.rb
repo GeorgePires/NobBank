@@ -5,12 +5,8 @@ class AccountsController < ApplicationController
   before_action :set_account_with_user
 
   def index
-    @total_accounts_balance = current_user.account.balance
+    @account = current_user.account
     @transactions = current_user.account.transactions.history_transactions.limit(8)
-  end
-
-  def show
-    @transactions = Transaction.where(account_id: @account.id).history_transactions
   end
 
   def destroy
