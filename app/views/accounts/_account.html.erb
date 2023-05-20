@@ -25,17 +25,17 @@
     <%= button_to active_button_text(account.try(:status)), account_path(account),
       method: :delete,
       data: { turbo_confirm: 'Are you sure?' },
-      class: "ml-2 rounded-lg py-3 px-5 bg-purple-600 text-white inline-block font-medium"
+      class: "ml-2 rounded-lg py-2.5 px-5 bg-purple-600 hover:bg-purple-800  text-white inline-block font-medium"
     %>
   </div>
   <%= link_to "Deposit", account_deposit_path(account),
     method: :get,
-    class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    class: "rounded-lg ml-2 px-5 py-2.5 bg-gray-100 inline-block font-medium" %>
   <%= link_to "Withdraw", account_withdraw_path(account),
     method: :get,
-    class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    class: "rounded-lg py-2.5 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
   <%= link_to "Transfer", account_transfer_path(account),
     method: :get,
-    class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    class: "rounded-lg py-2.5 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
   <hr class="mt-6">
 </div>

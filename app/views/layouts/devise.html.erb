@@ -9,6 +9,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body class="h-full">
+    <% unless action_name != "edit" && action_name != "update" %>
+      <%= render  "layouts/components/header" %>
+    <% end %>
     <div class="container px-5 py-24 mx-auto">
     <%= render  "layouts/components/alerts" %>
       <%= yield %>
