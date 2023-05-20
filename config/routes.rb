@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users
   
   resources :accounts do
@@ -11,8 +13,20 @@ Rails.application.routes.draw do
     get '/transfer', action: 'transfer'
     post '/create_transfer', action: 'create_transfer'
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :accounts, only: [:index]
+       #get '/users/transactions/:id', to: 'users#transactions', as: :transactions
+
+       #get '/users/current_balance/:id', to: 'users#current_balance', as: :current_balance
+       post 'accounts/deposit', to: 'accounts#deposit', as: :deposit
+       post 'accounts/withdraw', to: 'accounts#withdraw'
+    end
+  end
   
-  resources :transactions, only: [:edit, :update, :show]
+  resources :transactions
 
   root "welcome#index"
+  get 'about', to: 'welcome#about'
 end
