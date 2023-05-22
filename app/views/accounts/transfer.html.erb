@@ -2,10 +2,9 @@
 <div class="mx-auto md:w-2/3 w-full">
   <h1 class="my-5 font-bold text-4xl"><%= current_user.full_name %></h1>
   <div class="ml-2 rounded-lg py-3 px-5 bg-gray-100" >
-    <p><strong>Account Number:</strong> <%= @account.try(:account_number) %></p>
+    <p class="my-2"><strong>Account Number:</strong> <%= @account.try(:account_number) %></p>
     <p><strong>Current Balance:</strong> <%= number_to_currency(@account.try(:balance), unit: "$ ", separator: ".", delimiter: ",") %></p>
   </div>
-
   <%= render 'accounts/forms/form_transfer', account: @account %>
   <%= link_to 'Back to account', accounts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 </div>

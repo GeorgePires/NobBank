@@ -7,7 +7,7 @@
   </p>
 </div>
 <% # Flash messages [success, error] %>
- <%= render "layouts/components/alerts" %>
+<%= render "layouts/components/alerts" %>
 <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
   <% # Card: Status account %>
   <div
@@ -76,12 +76,4 @@
       <p class="text-lg font-semibold text-gray-700"><%= transactions.try(:withdraw) %></p>
     </div>
   </div>
-  <%= button_to(new_account_path, class: "flex items-center justify-between
-      w-full px-4 py-2 text-sm font-medium leading-5 text-white
-      transition-colors duration-150 bg-gray-500 border border-transparent
-      rounded-lg active:bg-gray-500 hover:bg-gray-600 focus:outline-none
-      focus:shadow-outline-gray", method: :get) do %>
-    Create new account
-    <span class="ml-2" aria-hidden="true">+</span>
-  <% end %>
 </div>
