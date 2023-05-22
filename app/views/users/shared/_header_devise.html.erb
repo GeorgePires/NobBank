@@ -1,0 +1,12 @@
+<div class="lg:w-1/2">
+  <%= link_to(root_path, class:"flex items-center") do %>
+    <%= image_tag('logo.svg', class: 'h-6 mr-3 sm:h-9') %>
+    <span class="self-center text-xl font-semibold whitespace-nowra">
+      NobBank
+    </span>
+  <% end %>
+  <h1 class="mt-4 text-gray-600 md:text-lg">Welcome back</h1>
+  <h1 class="mt-4 text-2xl font-medium text-gray-800 capitalize lg:text-3xl">
+    <%= action_message %>
+  </h1>
+</div>
