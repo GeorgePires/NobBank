@@ -6,7 +6,7 @@ class AccountsController < ApplicationController
 
   def index
     @account = current_user.account
-    @transactions = current_user.account.transactions.history_transactions.limit(8)
+    @transactions = current_user.account.transactions.order_transactions.limit(8)
   end
 
   def destroy
