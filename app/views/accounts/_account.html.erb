@@ -1,8 +1,20 @@
 <div id="<%= dom_id account %>">
   <p class="my-5">
     <strong class="inline text-slate-700">Account Number:</strong>
-    <strong>#<%= account.try(:account_number) %></strong>
+    <span class="bg-purple-100 text-purple-800 text-sm font-semibold mr-2 px-2 py-1 dark:bg-purple-900 rounded-full" data-popover-target="popover-right"
+    data-popover-placement="right">#<%= account.try(:account_number) %></span>
   </p>
+  <%# Popover %>
+  <div data-popover id="popover-right" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0">
+    <div class="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg">
+      <h3 class="font-semibold text-gray-900">Account Number</h3>
+    </div>
+    <div class="px-3 py-2">
+      <p>share your account number to receive transfers</p>
+    </div>
+    <div data-popper-arrow></div>
+  </div>
+
   <p class="my-5">
     <strong class="inline text-slate-700">Account Holder:</strong>
     <%= current_user.full_name %>
