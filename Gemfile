@@ -71,6 +71,7 @@ group :development do
   # gem "spring"
   gem 'rubocop', require: false
   gem 'rubocop-rails', '~> 2.19', '>= 2.19.1', require: false
+  gem 'letter_opener'
 end
 
 group :test do
