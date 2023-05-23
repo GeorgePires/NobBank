@@ -20,6 +20,8 @@
 - Esbuild
 - Gem: Devise
 - Gem: Rspec
+- Gem: Letter opener
+- Gem: Pagy
 - Deploy ~> Fly.io
 
 
@@ -27,7 +29,7 @@
 
 **WEB**
 - [x] Login - User
-- [x] Realizar Saques ou Depósitos na conta do usuário
+- [x] Realizar Saques ou Depósitos na sua conta
 - [x] Realizar Transferências entre Contas
 - [x] Histórico de transações realizadas ordenadas por data e hora
 

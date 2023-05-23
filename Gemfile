@@ -69,9 +69,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'letter_opener'
   gem 'rubocop', require: false
   gem 'rubocop-rails', '~> 2.19', '>= 2.19.1', require: false
-  gem 'letter_opener'
 end
 
 group :test do
